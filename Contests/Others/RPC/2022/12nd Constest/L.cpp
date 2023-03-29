@@ -1,24 +1,23 @@
 /**
  *  author:  josuerom
- *  created: 25/03/23 19:23:47
+ *  created: 25/03/23 22:25:32
 **/
-#pragma GCC optimize("03,unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
 
-void dbg_out() { cout << '\n'; }
-template<typename Head, typename... Tail>
-void dbg_out(Head H, Tail... T) { cout << ' ' << H; dbg_out(T...); }
-#define dbg(...) cout << "(" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
-#define all(vec) vec.begin(), vec.end()
-#define rall(vec) vec.rbegin(), vec.rend()
-#define sz(vec) (int) (vec).size()
-#define ull unsigned long long
-#define ll long long
-
 int main() {
    ios::sync_with_stdio(false);
-   cin.tie(0); cout.tie(0);
-   
+   cin.tie(0);
+   int tt;
+   cin >> tt;
+   while (tt--) {
+      int n;
+      cin >> n;
+      int ans = sqrt(2*n);
+      while ((ans*(ans+1))/2 < n) {
+         ans++;
+      }
+      cout << ans << '\n';
+   }
    return 0;
 }
