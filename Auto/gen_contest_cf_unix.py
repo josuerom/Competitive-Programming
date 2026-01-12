@@ -51,10 +51,10 @@ def obtener_nombre_problema(contest_id):
 
 def gen_contest_cf_unix():
     contest_id = input("\033[93mContestID ->\033[0m ")
-    root = f"/home/josuerom/Workspace/Competitive-Programming/Contests/CodeForces"
+    root = f"/home/josuerom/Workspace/Competitive-Programming/Contests/CodeForces/"
     fecha_hora = datetime.now()
     anio = fecha_hora.strftime("%Y")
-    root = root + f"\\{anio}"
+    root = root + f"{anio}"
     contest_route = os.path.join(root, contest_id)
 
     fecha_hora_actual = fecha_hora.strftime("%d/%m/%Y %H:%M:%S")
@@ -88,7 +88,7 @@ def gen_contest_cf_unix():
     os.makedirs(contest_route)
 
     print("\033[94mThese files were created:\n-----------------------------\033[0m")
-    open(f"{contest_route}\\in1", "w")
+    open(f"{contest_route}/in1", "w")
 
     ubicacion_plantillas = f"/home/josuerom/Workspace/Competitive-Programming/Templates"
     tipos_de_plantillas = {
