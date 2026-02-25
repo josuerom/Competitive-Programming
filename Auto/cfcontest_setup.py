@@ -1,5 +1,4 @@
 """
-cfcontest_setup.py
 Generador automático de archivos para concursos de codeforces
 Compatible con Windows, Linux y MacOS
 Autor: josuerom
