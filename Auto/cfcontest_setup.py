@@ -117,8 +117,14 @@ def crear_archivos_plantilla(
     anio = fecha_hora.strftime("%Y")
 
     ruta_plantillas = obtener_ruta_plantillas(sistema)
+
+    if sistema == "Darwin" and extension == "cpp":
+        plantilla_cpp = os.path.join(ruta_plantillas, "template-macos.cpp")
+    else:
+        plantilla_cpp = os.path.join(ruta_plantillas, "tem.cpp")
+
     plantillas = {
-        "cpp": os.path.join(ruta_plantillas, "tem.cpp"),
+        "cpp": plantilla_cpp,
         "java": os.path.join(ruta_plantillas, "tem.java"),
         "py": os.path.join(ruta_plantillas, "tem.py"),
     }
