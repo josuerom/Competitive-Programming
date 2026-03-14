@@ -25,9 +25,17 @@
 #include <climits>
 using namespace std;
 
-const int N = (1e1) + 100;
+int n, sa, sb;
 
 void solve() {
+    cin >> n;
+    sa = 0, sb = 0;
+    for (int i = 0, x; i < n - 1; i++) {
+        cin >> x;
+        sa += x < 0 ? abs(x) : 0;
+        sb += x > 0 ? x : 0;
+    }
+    cout << (sa - sb) << endl;
 }
 
 int main() {
@@ -43,4 +51,5 @@ int main() {
 #else
    while (tt--) solve();
 #endif
+   return 0;
 }

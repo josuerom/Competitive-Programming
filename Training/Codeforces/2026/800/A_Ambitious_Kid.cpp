@@ -25,16 +25,23 @@
 #include <climits>
 using namespace std;
 
-const int N = (1e1) + 100;
+int n, x;
 
 void solve() {
+   cin >> n;
+   int res = INT_MAX;
+   for (int i = 0; i < n; i++) {
+      cin >> x;
+      res = min(res, abs(x));
+   }
+   cout << res << endl;
 }
 
 int main() {
    ios::sync_with_stdio(false);
    cin.tie(0);
    int tt = 1;
-   cin >> tt;
+   //cin >> tt;
 #ifdef LOCAL
    for (int i = 1; i <= tt; i++) {
       cout << "Case #" << i << ":\n";
