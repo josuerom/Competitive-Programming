@@ -26,8 +26,9 @@
 #define endl '\n'
 using namespace std;
 
-int n, sum, z;
+int n, sum;
 vector<int> a;
+bool flag;
 
 void solve() {
    cin >> n;
@@ -35,25 +36,27 @@ void solve() {
       cin >> x;
       a.push_back(x);
    }
-   sort(a.begin(), a.end());
+   sort(a.rbegin(), a.rend());
    if (a[0] == a[n - 1]) {
       cout << "NO\n";
+      a.clear();
       return;
    }
-   z = n;
-   while (z--) {
-      sum = 0;
-      for (int i = 0; i < n; i++) {
+   flag = true;
+   while (flag) {
+      flag = false;
+      sum = a[0];
+      for (int i = 1; i < n - 1; i++) {
          if (sum == a[i]) {
-            swap(a[i - 1], a[i]);
-         }
-         sum += a[i];
+            swap(a[i], a.back());
+            sum += a[i];
+            flag = true;
+         } else sum += a[i];
       }
    }
    cout << "YES\n";
-   for (int i = 0; i < n; i++) {
-      cout << a[i] << " \n"[i == n - 1];
-   }
+   for (auto &e : a) cout << e << " ";
+   cout << endl;
    a.clear();
 }
 
